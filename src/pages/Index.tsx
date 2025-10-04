@@ -12,8 +12,8 @@ import {
   Zap,
   ArrowRight
 } from "lucide-react";
-import heroDevice from "@/assets/hero-device.jpg";
-import festivalCrowd from "@/assets/festival-crowd.jpg";
+import heroDevice from "@/assets/waypoint-device.png";
+import festivalCrowd from "@/assets/festival-friends.webp";
 
 const Index = () => {
   return (
