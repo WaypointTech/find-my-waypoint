@@ -60,9 +60,11 @@ const Index = () => {
                 at festivals—even when phone towers are overloaded. Small, intuitive, and always reliable.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                  Join the Waitlist
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg" asChild>
+                  <a href="mailto:partnerships@trywaypoint.io">
+                    Partner With Us
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
                 </Button>
                 <Button size="lg" variant="outline" className="border-primary text-foreground hover:bg-primary/10 text-lg">
                   Learn More
@@ -271,9 +273,11 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                Partner With Us
-                <ArrowRight className="ml-2 w-5 h-5" />
+              <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg" asChild>
+                <a href="mailto:partnerships@trywaypoint.io">
+                  Partner With Us
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -290,9 +294,11 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join thousands who never miss a beat—or their friends.
             </p>
-            <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-              Join the Waitlist
-              <ArrowRight className="ml-2 w-5 h-5" />
+            <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg" asChild>
+              <a href="mailto:partnerships@trywaypoint.io">
+                Partner With Us
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
             </Button>
           </div>
         </div>
