@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import heroDevice from "@/assets/waypoint-device.png";
 import festivalCrowd from "@/assets/festival-friends.webp";
+import { PartnerFormDialog } from "@/components/PartnerFormDialog";
 
 const Index = () => {
   return (
@@ -60,12 +61,12 @@ const Index = () => {
                 at festivals—even when phone towers are overloaded. Small, intuitive, and always reliable.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg" asChild>
-                  <a href="mailto:partnerships@trywaypoint.io">
+                <PartnerFormDialog>
+                  <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
                     Partner With Us
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
-                </Button>
+                  </Button>
+                </PartnerFormDialog>
                 <Button size="lg" variant="outline" className="border-primary text-foreground hover:bg-primary/10 text-lg">
                   Learn More
                 </Button>
@@ -124,8 +125,10 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-bold mb-3">SOS Alerts</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Instant emergency alerts sent directly to festival staff. 
-                Your safety is always one button press away.
+                Instant emergency alerts sent directly to festival staff with your precise location 
+                displayed on the help tent screen. The deliberate press-and-hold button prevents 
+                accidental activation. Your privacy is protected—you're only visible when you choose 
+                to request help.
               </p>
             </Card>
 
@@ -135,7 +138,8 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-bold mb-3">All-Day Battery</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Lasts the entire festival and beyond. Lightweight design won't 
+                Lasts the entire festival and beyond. Running low? Simply swap your device 
+                at any charging station for a fully charged one. Lightweight design won't 
                 weigh you down as you dance the night away.
               </p>
             </Card>
@@ -251,7 +255,9 @@ const Index = () => {
                 <Shield className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">Emergency Response</h3>
                 <p className="text-muted-foreground">
-                  Receive instant SOS alerts with precise locations for faster response times.
+                  Help tent screens display SOS alerts with precise locations on a live map for 
+                  faster response times. Festival-goers are only tracked when they actively press 
+                  the SOS button.
                 </p>
               </Card>
 
@@ -273,12 +279,12 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg" asChild>
-                <a href="mailto:partnerships@trywaypoint.io">
+              <PartnerFormDialog>
+                <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
                   Partner With Us
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-              </Button>
+                </Button>
+              </PartnerFormDialog>
             </div>
           </div>
         </div>
@@ -294,12 +300,12 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join thousands who never miss a beat—or their friends.
             </p>
-            <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg" asChild>
-              <a href="mailto:partnerships@trywaypoint.io">
+            <PartnerFormDialog>
+              <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
                 Partner With Us
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
-            </Button>
+              </Button>
+            </PartnerFormDialog>
           </div>
         </div>
       </section>
