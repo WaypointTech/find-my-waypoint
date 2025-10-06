@@ -22,6 +22,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { airtableService } from "@/lib/airtable";
 
 const partnerFormSchema = z.object({
   organisationName: z.string().min(2, {
@@ -53,6 +54,7 @@ interface PartnerFormDialogProps {
 
 export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
   const [open, setOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<PartnerFormValues>({
@@ -70,17 +72,31 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
   });
 
   const onSubmit = async (data: PartnerFormValues) => {
-    // For now, we'll just log the data and show a success message
-    // In production, this would submit to your backend/Airtable
-    console.log("Partner form submission:", data);
+    setIsSubmitting(true);
     
-    toast({
-      title: "Request submitted successfully!",
-      description: "We'll be in touch with you shortly to discuss your partnership.",
-    });
+    try {
+      await airtableService.createPartnerRequest(data);
+      
+      toast({
+        title: "Request submitted successfully!",
+        description: "We'll be in touch with you shortly to discuss your partnership.",
+      });
 
-    form.reset();
-    setOpen(false);
+      form.reset();
+      setOpen(false);
+    } catch (error) {
+      console.error("Failed to submit partner request:", error);
+      
+      toast({
+        title: "Submission failed",
+        description: error instanceof Error 
+          ? error.message 
+          : "Something went wrong. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -226,14 +242,16 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
                 variant="outline"
                 onClick={() => setOpen(false)}
                 className="flex-1"
+                disabled={isSubmitting}
               >
                 Cancel
               </Button>
               <Button
                 type="submit"
                 className="flex-1 bg-gradient-hero hover:shadow-glow transition-all"
+                disabled={isSubmitting}
               >
-                Submit Request
+                {isSubmitting ? "Submitting..." : "Submit Request"}
               </Button>
             </div>
           </form>
