@@ -34,9 +34,7 @@ const partnerFormSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  phone: z.string().min(10, {
-    message: "Please enter a valid phone number.",
-  }),
+  phone: z.string().optional(),
   festivalName: z.string().optional(),
   expectedAttendees: z.string().optional(),
   eventDate: z.string().optional(),
@@ -75,7 +73,18 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
     setIsSubmitting(true);
     
     try {
-      await airtableService.createPartnerRequest(data);
+      const payload = {
+        organisationName: data.organisationName,
+        contactName: data.contactName,
+        email: data.email,
+        message: data.message,
+        ...(data.phone && { phone: data.phone }),
+        ...(data.festivalName && { festivalName: data.festivalName }),
+        ...(data.expectedAttendees && { expectedAttendees: data.expectedAttendees }),
+        ...(data.eventDate && { eventDate: data.eventDate }),
+      };
+
+      await airtableService.createPartnerRequest(payload);
       
       toast({
         title: "Request submitted successfully!",
@@ -164,7 +173,7 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number *</FormLabel>
+                    <FormLabel>Phone Number</FormLabel>
                     <FormControl>
                       <Input type="tel" placeholder="+44 20 1234 5678" {...field} />
                     </FormControl>

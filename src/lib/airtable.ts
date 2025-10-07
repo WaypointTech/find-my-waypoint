@@ -3,12 +3,11 @@ interface AirtableRecord {
     "Organisation Name": string;
     "Contact Name": string;
     "Email Address": string;
-    "Phone Number": string;
+    "Phone Number"?: string;
     "Festival/Event Name"?: string;
     "Expected Attendees"?: string;
     "Event Date"?: string;
     "Message": string;
-    "Submission Date": string;
     "Status": string;
   };
 }
@@ -23,7 +22,7 @@ interface PartnerFormData {
   organisationName: string;
   contactName: string;
   email: string;
-  phone: string;
+  phone?: string;
   festivalName?: string;
   expectedAttendees?: string;
   eventDate?: string;
@@ -34,11 +33,13 @@ export class AirtableService {
   private apiKey: string;
   private baseId: string;
   private tableName: string;
+  private tableId?: string;
 
   constructor() {
     this.apiKey = import.meta.env.VITE_AIRTABLE_API_KEY;
     this.baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
     this.tableName = import.meta.env.VITE_AIRTABLE_TABLE_NAME || "Partner Enquiries";
+    this.tableId = import.meta.env.VITE_AIRTABLE_TABLE_ID;
 
     if (!this.apiKey || !this.baseId) {
       console.warn("Airtable configuration missing. Please check your environment variables.");
@@ -55,18 +56,18 @@ export class AirtableService {
         "Organisation Name": data.organisationName,
         "Contact Name": data.contactName,
         "Email Address": data.email,
-        "Phone Number": data.phone,
         "Message": data.message,
-        "Submission Date": new Date().toISOString(),
         "Status": "New",
         ...(data.festivalName && { "Festival/Event Name": data.festivalName }),
         ...(data.expectedAttendees && { "Expected Attendees": data.expectedAttendees }),
         ...(data.eventDate && { "Event Date": data.eventDate }),
+        ...(data.phone && data.phone.trim() !== "" && { "Phone Number": data.phone }),
       },
     };
 
+    const tableSegment = this.tableId ? this.tableId : encodeURIComponent(this.tableName);
     const response = await fetch(
-      `https://api.airtable.com/v0/${this.baseId}/${encodeURIComponent(this.tableName)}`,
+      `https://api.airtable.com/v0/${this.baseId}/${tableSegment}`,
       {
         method: "POST",
         headers: {
@@ -96,8 +97,9 @@ export class AirtableService {
     }
 
     try {
+      const tableSegment = this.tableId ? this.tableId : encodeURIComponent(this.tableName);
       const response = await fetch(
-        `https://api.airtable.com/v0/${this.baseId}/${encodeURIComponent(this.tableName)}?maxRecords=1`,
+        `https://api.airtable.com/v0/${this.baseId}/${tableSegment}?maxRecords=1`,
         {
           headers: {
             Authorization: `Bearer ${this.apiKey}`,
