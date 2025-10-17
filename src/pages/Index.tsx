@@ -74,22 +74,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Solutions Section */}
+      {/* Offerings Section */}
       <section id="features" className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Solutions</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Three pillars designed for live events.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Offerings</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Two clear options for your event needs.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:shadow-glow group">
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
                 <Users className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Friend‑Finding & Crew Messaging</h3>
+              <h3 className="text-2xl font-bold mb-3">Compass — friend‑finding & offline messaging (no internet needed)</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Keep groups together with device‑level direction finding and offline messaging when mobile networks are congested.
+                Keep groups together with device‑level direction finding and offline messaging when mobile networks are congested. Works without bringing internet onto site.
               </p>
             </Card>
 
@@ -97,19 +97,9 @@ const Index = () => {
               <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
                 <Radio className="w-7 h-7 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Temporary festival internet</h3>
+              <h3 className="text-2xl font-bold mb-3">Event Internet — extra internet for attendees</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Bring temporary internet into the site (for example via satellite) and share it locally with pop‑up Wi‑Fi nodes so fans can upload, stream, and transact.
-              </p>
-            </Card>
-
-            <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:shadow-glow group">
-              <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
-                <Shield className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Ops & Safety Comms</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Boost situational awareness: rendezvous points, SOS, staff channels; works alongside the tools you already use.
+                Bring temporary internet into the site (for example via satellite or a temporary wired link) and share it locally with a robust mesh/Wi‑Fi network that keeps working when phones struggle with interference—so fans can upload, stream, and transact.
               </p>
             </Card>
           </div>
@@ -120,8 +110,33 @@ const Index = () => {
       <section id="how-it-works" className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-subtle" />
         <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works — Compass</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">No site internet required. Works device‑to‑device so groups stay connected even when mobile networks are busy.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">1</div>
+              <h3 className="text-2xl font-bold mb-3">Pair your group</h3>
+              <p className="text-muted-foreground">Simple pairing links friends or crew in seconds.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">2</div>
+              <h3 className="text-2xl font-bold mb-3">See direction, send messages</h3>
+              <p className="text-muted-foreground">Devices talk directly to each other, so finding people and messaging keeps working.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">3</div>
+              <h3 className="text-2xl font-bold mb-3">No signal? Still works</h3>
+              <p className="text-muted-foreground">Keeps going even when phones struggle with congestion and interference.</p>
+            </div>
+          </div>
+
+          <div className="my-12 h-px bg-border" />
+
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works (at a glance)</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works — Event Internet</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Internet into site → Waypoint nodes → Guests & staff devices.</p>
           </div>
 
