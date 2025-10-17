@@ -27,11 +27,11 @@ const Index = () => {
             <span className="text-2xl font-bold">Waypoint</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
-            <a href="#festivals" className="text-muted-foreground hover:text-foreground transition-colors">For Festivals</a>
+            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Solutions</a>
+            <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">How it works</a>
+            <a href="#festivals" className="text-muted-foreground hover:text-foreground transition-colors">For organisers</a>
             <Button className="bg-gradient-hero hover:shadow-glow transition-all">
-              Get Started
+              Book a pilot
             </Button>
           </div>
         </div>
@@ -47,30 +47,27 @@ const Index = () => {
             <div className="animate-fade-in">
               <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
                 <Sparkles className="w-4 h-4 mr-2" />
-                Never Lose Your Crew Again
+                Festival connectivity partner
               </Badge>
               <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-                Stay Connected.
-                <br />
-                <span className="bg-gradient-hero bg-clip-text text-transparent">
-                  Stay Safe.
-                </span>
+                Connectivity that survives the crowd
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Waypoint uses mesh network technology to keep you connected with friends 
-                at festivals—even when phone towers are overloaded. Small, intuitive, and always reliable.
+                We help organisers and rental partners deliver reliable on‑site comms: find friends, message offline,
+                and bring supplemental high‑bandwidth backhaul where it’s needed most.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <PartnerFormDialog>
                   <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                    Partner With Us
+                    Book a pilot
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </PartnerFormDialog>
-                <Button size="lg" variant="outline" className="border-primary text-foreground hover:bg-primary/10 text-lg">
-                  Learn More
+                <Button asChild size="lg" variant="outline" className="border-primary text-foreground hover:bg-primary/10 text-lg">
+                  <a href="/waypoint-onepager.pdf" target="_blank" rel="noreferrer">Download one‑pager</a>
                 </Button>
               </div>
+              <p className="mt-6 text-sm text-muted-foreground">In pilot with select festivals.</p>
             </div>
             <div className="relative animate-slide-up">
               <div className="absolute inset-0 bg-primary/30 rounded-full blur-[100px] animate-pulse-glow" />
@@ -84,74 +81,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Solutions Section */}
       <section id="features" className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Built for the Festival Experience
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Engineered to work where your phone can't, keeping you connected in the chaos.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Solutions</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Three pillars designed for live events.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:shadow-glow group">
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
-                <Radio className="w-7 h-7 text-primary" />
+                <Users className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Mesh Network</h3>
+              <h3 className="text-2xl font-bold mb-3">Friend‑Finding & Crew Messaging</h3>
               <p className="text-muted-foreground leading-relaxed">
-                No phone towers needed. Our mesh network stays strong even when cellular 
-                networks are overloaded with thousands of festival-goers.
+                Keep groups together with device‑level direction finding and mesh messaging when LTE is congested.
               </p>
             </Card>
 
             <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:shadow-glow group">
               <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
-                <Users className="w-7 h-7 text-accent" />
+                <Radio className="w-7 h-7 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Find Your Friends</h3>
+              <h3 className="text-2xl font-bold mb-3">Temporary Festival Internet</h3>
               <p className="text-muted-foreground leading-relaxed">
-                See your crew's location in real-time. Simple, intuitive interface 
-                means less time on devices, more time enjoying the moment.
-              </p>
-            </Card>
-
-            <Card className="p-8 bg-card border-border hover:border-sos/50 transition-all hover:shadow-glow group">
-              <div className="w-14 h-14 rounded-xl bg-sos/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
-                <AlertCircle className="w-7 h-7 text-sos" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">SOS Alerts</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Instant emergency alerts sent directly to festival staff with your precise location 
-                displayed on the help tent screen. The deliberate press-and-hold button prevents 
-                accidental activation. Your privacy is protected—you're only visible when you choose 
-                to request help.
-              </p>
-            </Card>
-
-            <Card className="p-8 bg-card border-border hover:border-success/50 transition-all hover:shadow-glow group">
-              <div className="w-14 h-14 rounded-xl bg-success/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
-                <Battery className="w-7 h-7 text-success" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">All-Day Battery</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Lasts the entire festival and beyond. Running low? Simply swap your device 
-                at any charging station for a fully charged one. Lightweight design won't 
-                weigh you down as you dance the night away.
-              </p>
-            </Card>
-
-            <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:shadow-glow group">
-              <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
-                <Sparkles className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Custom Branding</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Each device can be customized with festival-specific designs and colors, 
-                making them unique collectibles for attendees.
+                Rapid backhaul (e.g., satellite or microwave) distributed via pop‑up Wi‑Fi/HaLow nodes so fans can upload, stream, and transact.
               </p>
             </Card>
 
@@ -159,10 +114,9 @@ const Index = () => {
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
                 <Shield className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Always Reliable</h3>
+              <h3 className="text-2xl font-bold mb-3">Ops & Safety Comms</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Purpose-built hardware that won't fail when you need it most. 
-                No interference, no dropped connections.
+                Boost situational awareness: rendezvous points, SOS, staff channels; complements radios/CCTV—no rip‑and‑replace.
               </p>
             </Card>
           </div>
@@ -174,12 +128,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-subtle" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Simple. Intuitive. Powerful.
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Three steps to staying connected all festival long.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works (at a glance)</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Backhaul → Waypoint nodes → Guests & staff devices.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -187,9 +137,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">
                 1
               </div>
-              <h3 className="text-2xl font-bold mb-3">Pick Up Your Device</h3>
+              <h3 className="text-2xl font-bold mb-3">Backhaul</h3>
               <p className="text-muted-foreground">
-                Get your Waypoint at the festival entrance. Pre-registered or on-site pickup available.
+                Satellite, microwave, or fibre provides supplemental capacity where it’s needed most.
               </p>
             </div>
 
@@ -197,9 +147,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">
                 2
               </div>
-              <h3 className="text-2xl font-bold mb-3">Connect Your Crew</h3>
+              <h3 className="text-2xl font-bold mb-3">Waypoint nodes</h3>
               <p className="text-muted-foreground">
-                Quick pairing process links your friends. Tap devices together or scan QR codes.
+                Distribute locally via Wi‑Fi/HaLow nodes (battery or mains) across the site.
               </p>
             </div>
 
@@ -207,9 +157,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">
                 3
               </div>
-              <h3 className="text-2xl font-bold mb-3">Enjoy the Festival</h3>
+              <h3 className="text-2xl font-bold mb-3">Guests & staff</h3>
               <p className="text-muted-foreground">
-                See your friends' locations, send quick messages, or call for help if needed.
+                Friend‑finding, offline messaging, payments, and content—designed for live days.
               </p>
             </div>
           </div>
@@ -232,56 +182,42 @@ const Index = () => {
             <div className="text-center mb-12">
               <Badge className="mb-6 bg-primary/20 text-primary border-primary/30 text-lg py-2 px-4">
                 <Zap className="w-5 h-5 mr-2" />
-                For Festival Organizers
+                For organisers & rental partners
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Elevate Safety & Experience
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Partner with Waypoint to provide unmatched safety and connectivity for your attendees.
-              </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Built for operations—loved by guests</h2>
+              <p className="text-xl text-muted-foreground">Fewer lost‑person incidents, shorter reunion times, higher guest satisfaction, better social content throughput, and fewer “no‑signal” complaints.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
                 <MapPin className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Staff Communication</h3>
-                <p className="text-muted-foreground">
-                  Equip your staff with devices for seamless coordination across the venue.
-                </p>
-              </Card>
-
-              <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
-                <Shield className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Emergency Response</h3>
-                <p className="text-muted-foreground">
-                  Help tent screens display SOS alerts with precise locations on a live map for 
-                  faster response times. Festival-goers are only tracked when they actively press 
-                  the SOS button.
-                </p>
+                <h3 className="text-xl font-bold mb-2">Fewer lost‑person incidents</h3>
+                <p className="text-muted-foreground">Shorter reunion times with friend‑finding and rendezvous points.</p>
               </Card>
 
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
                 <Sparkles className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Custom Branding</h3>
-                <p className="text-muted-foreground">
-                  Devices customized with your festival's unique design and branding.
-                </p>
+                <h3 className="text-xl font-bold mb-2">Higher guest satisfaction</h3>
+                <p className="text-muted-foreground">Keep groups together and comms working when LTE is jammed.</p>
               </Card>
 
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
-                <Users className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Enhanced Experience</h3>
-                <p className="text-muted-foreground">
-                  Keep attendees connected and safe, creating peace of mind for everyone.
-                </p>
+                <Zap className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">Better content throughput</h3>
+                <p className="text-muted-foreground">Supplemental backhaul and smart distribution for uploads and transactions.</p>
+              </Card>
+
+              <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
+                <Radio className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2">Fewer “no‑signal” complaints</h3>
+                <p className="text-muted-foreground">Designed to complement existing radios, COWs/DAS, and Wi‑Fi.</p>
               </Card>
             </div>
 
             <div className="text-center">
               <PartnerFormDialog>
                 <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                  Partner With Us
+                  Book a pilot
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </PartnerFormDialog>
@@ -294,15 +230,11 @@ const Index = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Transform Your Festival Experience?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Join thousands who never miss a beat—or their friends.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Book a pilot</h2>
+            <p className="text-xl text-muted-foreground mb-8">We’ll reply within one business day.</p>
             <PartnerFormDialog>
               <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                Partner With Us
+                Book a pilot
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </PartnerFormDialog>
@@ -319,9 +251,7 @@ const Index = () => {
                 <div className="w-8 h-8 rounded-full bg-gradient-hero" />
                 <span className="text-xl font-bold">Waypoint</span>
               </div>
-              <p className="text-muted-foreground">
-                Keeping festival-goers connected and safe.
-              </p>
+              <p className="text-muted-foreground">Festival connectivity partner: friend‑finding, offline messaging, and supplemental backhaul.</p>
             </div>
             
             <div>
