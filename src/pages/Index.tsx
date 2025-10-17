@@ -54,7 +54,7 @@ const Index = () => {
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 We help organisers and rental partners deliver reliable on‑site comms: find friends, message offline,
-                and bring supplemental high‑bandwidth backhaul where it’s needed most.
+                and bring extra internet capacity where it’s needed most.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <PartnerFormDialog>
@@ -69,14 +69,7 @@ const Index = () => {
               </div>
               <p className="mt-6 text-sm text-muted-foreground">In pilot with select festivals.</p>
             </div>
-            <div className="relative animate-slide-up">
-              <div className="absolute inset-0 bg-primary/30 rounded-full blur-[100px] animate-pulse-glow" />
-              <img 
-                src={heroDevice} 
-                alt="Waypoint device with glowing LED ring" 
-                className="relative z-10 w-full rounded-2xl shadow-glow-strong"
-              />
-            </div>
+            {/* Image removed intentionally to keep focus on organiser value */}
           </div>
         </div>
       </section>
@@ -96,7 +89,7 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-bold mb-3">Friend‑Finding & Crew Messaging</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Keep groups together with device‑level direction finding and mesh messaging when LTE is congested.
+                Keep groups together with device‑level direction finding and offline messaging when mobile networks are congested.
               </p>
             </Card>
 
@@ -104,9 +97,9 @@ const Index = () => {
               <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:shadow-glow transition-all">
                 <Radio className="w-7 h-7 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Temporary Festival Internet</h3>
+              <h3 className="text-2xl font-bold mb-3">Temporary festival internet</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Rapid backhaul (e.g., satellite or microwave) distributed via pop‑up Wi‑Fi/HaLow nodes so fans can upload, stream, and transact.
+                Bring temporary internet into the site (for example via satellite) and share it locally with pop‑up Wi‑Fi nodes so fans can upload, stream, and transact.
               </p>
             </Card>
 
@@ -116,7 +109,7 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-bold mb-3">Ops & Safety Comms</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Boost situational awareness: rendezvous points, SOS, staff channels; complements radios/CCTV—no rip‑and‑replace.
+                Boost situational awareness: rendezvous points, SOS, staff channels; works alongside the tools you already use.
               </p>
             </Card>
           </div>
@@ -129,7 +122,7 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works (at a glance)</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Backhaul → Waypoint nodes → Guests & staff devices.</p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Internet into site → Waypoint nodes → Guests & staff devices.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -137,9 +130,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">
                 1
               </div>
-              <h3 className="text-2xl font-bold mb-3">Backhaul</h3>
+              <h3 className="text-2xl font-bold mb-3">Bring internet into site</h3>
               <p className="text-muted-foreground">
-                Satellite, microwave, or fibre provides supplemental capacity where it’s needed most.
+                We add extra internet capacity (for example via satellite or a temporary wired link) where it’s needed most.
               </p>
             </div>
 
@@ -149,7 +142,7 @@ const Index = () => {
               </div>
               <h3 className="text-2xl font-bold mb-3">Waypoint nodes</h3>
               <p className="text-muted-foreground">
-                Distribute locally via Wi‑Fi/HaLow nodes (battery or mains) across the site.
+                Share it around the site using pop‑up Wi‑Fi nodes (battery or mains powered).
               </p>
             </div>
 
@@ -185,7 +178,7 @@ const Index = () => {
                 For organisers & rental partners
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Built for operations—loved by guests</h2>
-              <p className="text-xl text-muted-foreground">Fewer lost‑person incidents, shorter reunion times, higher guest satisfaction, better social content throughput, and fewer “no‑signal” complaints.</p>
+              <p className="text-xl text-muted-foreground">Fewer lost‑person incidents, shorter reunion times, higher guest satisfaction, better social content flow, and fewer “no‑signal” complaints.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -203,25 +196,18 @@ const Index = () => {
 
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
                 <Zap className="w-8 h-8 text-primary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Better content throughput</h3>
-                <p className="text-muted-foreground">Supplemental backhaul and smart distribution for uploads and transactions.</p>
+                <h3 className="text-xl font-bold mb-2">Better content flow</h3>
+                <p className="text-muted-foreground">Extra internet capacity and smart distribution for uploads and transactions.</p>
               </Card>
 
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
                 <Radio className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">Fewer “no‑signal” complaints</h3>
-                <p className="text-muted-foreground">Designed to complement existing radios, COWs/DAS, and Wi‑Fi.</p>
+                <p className="text-muted-foreground">Designed to complement existing radios, temporary mobile masts, and site Wi‑Fi.</p>
               </Card>
             </div>
 
-            <div className="text-center">
-              <PartnerFormDialog>
-                <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                  Book a pilot
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </PartnerFormDialog>
-            </div>
+            {/* Removed extra mid-page CTA to keep only the final one */}
           </div>
         </div>
       </section>
@@ -251,7 +237,7 @@ const Index = () => {
                 <div className="w-8 h-8 rounded-full bg-gradient-hero" />
                 <span className="text-xl font-bold">Waypoint</span>
               </div>
-              <p className="text-muted-foreground">Festival connectivity partner: friend‑finding, offline messaging, and supplemental backhaul.</p>
+              <p className="text-muted-foreground">Festival connectivity partner: friend‑finding, offline messaging, and extra internet capacity.</p>
             </div>
             
             <div>
