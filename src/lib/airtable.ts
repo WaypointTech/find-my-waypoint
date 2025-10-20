@@ -29,17 +29,28 @@ interface PartnerFormData {
   message: string;
 }
 
+interface ContentDownloadData {
+  name?: string;
+  email: string;
+  asset?: string; // e.g. "One-Pager"
+  source?: string; // e.g. "Website"
+}
+
 export class AirtableService {
   private apiKey: string;
   private baseId: string;
   private tableName: string;
   private tableId?: string;
+  private downloadsTableName: string;
+  private downloadsTableId?: string;
 
   constructor() {
     this.apiKey = import.meta.env.VITE_AIRTABLE_API_KEY;
     this.baseId = import.meta.env.VITE_AIRTABLE_BASE_ID;
     this.tableName = import.meta.env.VITE_AIRTABLE_TABLE_NAME || "Partner Enquiries";
     this.tableId = import.meta.env.VITE_AIRTABLE_TABLE_ID;
+    this.downloadsTableName = import.meta.env.VITE_AIRTABLE_DOWNLOADS_TABLE_NAME || "Content Downloads";
+    this.downloadsTableId = import.meta.env.VITE_AIRTABLE_DOWNLOADS_TABLE_ID;
 
     if (!this.apiKey || !this.baseId) {
       console.warn("Airtable configuration missing. Please check your environment variables.");
@@ -83,6 +94,46 @@ export class AirtableService {
       throw new Error(
         `Failed to submit partner request: ${response.status} ${response.statusText}. ${
           errorData.error?.message || "Unknown error"
+        }`
+      );
+    }
+
+    return response.json();
+  }
+
+  async createContentDownloadLead(data: ContentDownloadData): Promise<AirtableResponse> {
+    if (!this.apiKey || !this.baseId) {
+      throw new Error("Airtable configuration is missing. Please check your environment variables.");
+    }
+
+    const record = {
+      fields: {
+        "Email Address": data.email,
+        ...(data.name && data.name.trim() !== "" && { "Name": data.name }),
+        "Asset": data.asset || "One-Pager",
+        "Source": data.source || "Website",
+        "Status": "New",
+      },
+    } as { fields: Record<string, any> };
+
+    const tableSegment = this.downloadsTableId ? this.downloadsTableId : encodeURIComponent(this.downloadsTableName);
+    const response = await fetch(
+      `https://api.airtable.com/v0/${this.baseId}/${tableSegment}`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${this.apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(record),
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(
+        `Failed to create download lead: ${response.status} ${response.statusText}. ${
+          (errorData as any).error?.message || "Unknown error"
         }`
       );
     }

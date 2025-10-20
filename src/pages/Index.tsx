@@ -63,9 +63,6 @@ const Index = () => {
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </PartnerFormDialog>
-                <Button asChild size="lg" variant="outline" className="border-primary text-foreground hover:bg-primary/10 text-lg">
-                  <a href="/waypoint-onepager.pdf" target="_blank" rel="noreferrer">Download one‑pager</a>
-                </Button>
               </div>
               <p className="mt-6 text-sm text-muted-foreground">In pilot with select festivals.</p>
             </div>
