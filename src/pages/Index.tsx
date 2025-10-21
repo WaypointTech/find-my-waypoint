@@ -75,7 +75,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">When LTE jams, plans fall apart.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">When cellular data jams, plans fall apart.</h2>
               <p className="text-xl text-muted-foreground">Crowd peaks overwhelm cellular, so meetups fail, uploads stall, and calls drop.</p>
             </div>
             <div>
@@ -108,7 +108,7 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Pick up a puck, connect by Wi‑Fi, and let the waypoint mesh route to resilient on‑site backhaul so your phone can stream, call and share even when LTE is saturated.</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Pick up a puck, connect by Wi‑Fi, and let the waypoint mesh route to resilient on‑site backhaul so your phone can stream, call and share even when cellular data is saturated.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -251,10 +251,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Waypoint vs just LTE */}
+      {/* Why Waypoint vs just cellular data */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Waypoint Data vs. “just LTE”?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Waypoint Data vs. “just cellular data”?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Built for crowd peaks</h3><p className="text-muted-foreground">Mesh routes around cellular congestion.</p></Card>
             <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Local resilience</h3><p className="text-muted-foreground">Multiple backhaul options reduce single‑point failure.</p></Card>
