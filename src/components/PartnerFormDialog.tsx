@@ -117,7 +117,7 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
         <DialogHeader>
           <DialogTitle className="text-2xl">Partner With Waypoint</DialogTitle>
           <DialogDescription>
-            Tell us about your festival or event, and we'll get back to you with a customised solution.
+            Tell us about your festival, business convention, or event, and we'll get back to you with a customised solution.
           </DialogDescription>
         </DialogHeader>
         
@@ -131,7 +131,7 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
                   <FormItem>
                     <FormLabel>Organisation Name *</FormLabel>
                     <FormControl>
-                      <Input placeholder="Festival Productions Ltd" {...field} />
+                      <Input placeholder="Event Productions Ltd or Convention Organisers" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -161,7 +161,7 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
                   <FormItem>
                     <FormLabel>Email Address *</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="john@festival.com" {...field} />
+                      <Input type="email" placeholder="john@event.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -188,9 +188,9 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
               name="festivalName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Festival/Event Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Summer Sounds Festival" {...field} />
+                    <FormLabel>Festival/Event Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Summer Sounds Festival or TechCon 2025" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -235,7 +235,7 @@ export const PartnerFormDialog = ({ children }: PartnerFormDialogProps) => {
                   <FormLabel>Message *</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Tell us about your festival and what you're looking for from a partnership..."
+                      placeholder="Tell us about your festival, convention, or event and what you're looking for from a partnership..."
                       className="min-h-[120px]"
                       {...field}
                     />

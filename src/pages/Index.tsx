@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import festivalCrowd from "@/assets/festival-friends.webp";
 import { PartnerFormDialog } from "@/components/PartnerFormDialog";
+import { WaitlistFormDialog } from "@/components/WaitlistFormDialog";
 
 const Index = () => {
   return (
@@ -47,22 +48,24 @@ const Index = () => {
             <div className="animate-fade-in">
               <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
                 <Sparkles className="w-4 h-4 mr-2" />
-                In pilot with select festivals
+                Available for purchase and event partnerships
               </Badge>
-              <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">Stay connected when the crowd isn’t.</h1>
+              <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">No data, No problem.</h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                A pocket‑sized Wi‑Fi router that gives your phone real internet at festivals — powered by a waypoint mesh with resilient backhaul.
+                A MagSafe device that sticks to the back of your iPhone, connects via Bluetooth, and enables calls, video calls, texts, Find My Friends maps, and more using a mesh network. Equally valuable at music festivals and business conventions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <PartnerFormDialog>
+                <WaitlistFormDialog>
                   <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                    Book a pilot
+                    Join waitlist
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
+                </WaitlistFormDialog>
+                <PartnerFormDialog>
+                  <Button size="lg" variant="outline" className="text-lg">
+                    Book a pilot
+                  </Button>
                 </PartnerFormDialog>
-                <a href="#contact" className="inline-flex">
-                  <Button size="lg" variant="outline" className="text-lg">Talk to partnerships</Button>
-                </a>
               </div>
             </div>
             {/* Image intentionally omitted to keep focus on value */}
@@ -76,12 +79,12 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">When cellular data jams, plans fall apart.</h2>
-              <p className="text-xl text-muted-foreground">Crowd peaks overwhelm cellular, so meetups fail, uploads stall, and calls drop.</p>
+              <p className="text-xl text-muted-foreground">Crowded events overwhelm cellular networks, so meetups fail, calls drop, and messages don't send—whether you're at a music festival or a business convention.</p>
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-3">Our solution</h3>
               <p className="text-muted-foreground text-lg">
-                Waypoint Data keeps phones online so friends meet up, videos upload, and calls go through — without relying on congested cellular.
+                Waypoint connects your iPhone via Bluetooth to a mesh network, enabling calls, video calls, texts, Find My Friends maps, and more—without relying on congested cellular data.
               </p>
             </div>
           </div>
@@ -95,7 +98,7 @@ const Index = () => {
             <div className="flex items-start gap-4">
               <Users className="w-6 h-6 text-primary mt-1" />
               <p className="text-lg text-muted-foreground">
-                What it is: A phone‑shaped personal Wi‑Fi router (shareable by two people) that connects to a festival‑wide waypoint mesh, with multiple data backhaul sources into the site.
+                What it is: A MagSafe device that sticks to the back of your iPhone, connects via Bluetooth, and enables calls, video calls, texts, Find My Friends maps, and more using a mesh network. Perfect for music festivals and business conventions—available for direct purchase or through event partnerships.
               </p>
             </div>
           </Card>
@@ -108,44 +111,44 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Pick up a puck, connect by Wi‑Fi, and let the waypoint mesh route to resilient on‑site backhaul so your phone can stream, call and share even when cellular data is saturated.</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Attach the MagSafe device to your iPhone, pair via Bluetooth, and connect to the mesh network. Make calls, send texts, use Find My Friends maps, and more—even when cellular data fails.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">1</div>
-              <h3 className="text-2xl font-bold mb-3">Pick up & pair</h3>
-              <p className="text-muted-foreground">Rent your puck at entry and connect your phone via Wi‑Fi.</p>
+              <h3 className="text-2xl font-bold mb-3">Attach & pair</h3>
+              <p className="text-muted-foreground">Stick the MagSafe device to the back of your iPhone and pair via Bluetooth.</p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">2</div>
-              <h3 className="text-2xl font-bold mb-3">Mesh → backhaul</h3>
-              <p className="text-muted-foreground">Your puck links through our waypoint mesh to on‑site backhaul (e.g., satellite or fixed links).</p>
+              <h3 className="text-2xl font-bold mb-3">Connect to mesh</h3>
+              <p className="text-muted-foreground">Your device connects to the Waypoint mesh network, enabling communication with other devices in range.</p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-glow">3</div>
               <h3 className="text-2xl font-bold mb-3">Use your phone normally</h3>
-              <p className="text-muted-foreground">Stream, call, send photos and messages.</p>
+              <p className="text-muted-foreground">Make calls, video calls, send texts, use Find My Friends maps, and more.</p>
             </div>
           </div>
 
-          {/* Simple diagram: mesh → backhaul → internet */}
+          {/* Simple diagram: device → mesh → communication */}
           <div className="max-w-4xl mx-auto mt-16">
             <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm md:text-base">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-primary" />
-                  <span>Waypoint mesh</span>
+                  <span>iPhone + MagSafe device</span>
                 </div>
                 <span className="opacity-70">→</span>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-accent" />
-                  <span>On‑site backhaul</span>
+                  <span>Waypoint mesh network</span>
                 </div>
                 <span className="opacity-70">→</span>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-foreground" />
-                  <span>Internet</span>
+                  <span>Calls, texts, maps & more</span>
                 </div>
               </div>
             </Card>
@@ -157,9 +160,9 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 bg-card border-border"><h3 className="text-xl font-bold mb-2">Stream video</h3><p className="text-muted-foreground">From the crowd or the campsite.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="text-xl font-bold mb-2">Make calls & send messages</h3><p className="text-muted-foreground">Reliable even during crowd peaks.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="text-xl font-bold mb-2">Share photos & navigate meetups</h3><p className="text-muted-foreground">No more radio silence.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="text-xl font-bold mb-2">Make calls & video calls</h3><p className="text-muted-foreground">Stay connected even when cellular networks fail.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="text-xl font-bold mb-2">Send texts & messages</h3><p className="text-muted-foreground">Reliable messaging through the mesh network.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="text-xl font-bold mb-2">Find My Friends & maps</h3><p className="text-muted-foreground">Navigate and locate friends without data connectivity.</p></Card>
           </div>
         </div>
       </section>
@@ -168,12 +171,12 @@ const Index = () => {
       <section id="attendees" className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Rent it. Pocket it. Share it.</h2>
-            <p className="text-xl text-muted-foreground mb-8">Each Waypoint Data puck is designed for one or two people. Keep your group online across the grounds and between stages.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Buy it. Attach it. Connect it.</h2>
+            <p className="text-xl text-muted-foreground mb-8">Purchase your Waypoint device directly, or rent one through event partnerships. Perfect for music festivals and business conventions—stay connected when cellular data fails.</p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
-              <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Pick‑up points</h3><p className="text-muted-foreground">Available at festival entry.</p></Card>
-              <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Flexible rental</h3><p className="text-muted-foreground">Day or weekend options.</p></Card>
-              <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Easy returns</h3><p className="text-muted-foreground">Simple drop‑off at exit.</p></Card>
+              <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Direct purchase</h3><p className="text-muted-foreground">Buy your own device and use it at any event.</p></Card>
+              <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Event rental</h3><p className="text-muted-foreground">Rent through festival or convention partnerships.</p></Card>
+              <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Works everywhere</h3><p className="text-muted-foreground">Music festivals, business conventions, and more.</p></Card>
             </div>
           </div>
         </div>
@@ -184,7 +187,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <img 
             src={festivalCrowd} 
-            alt="Festival crowd" 
+            alt="Crowd at event" 
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/50" />
@@ -197,21 +200,21 @@ const Index = () => {
                 <Zap className="w-5 h-5 mr-2" />
                 For organisers & rental partners
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Connectivity your fans can feel.</h2>
-              <p className="text-xl text-muted-foreground">Deploy a festival‑wide waypoint mesh with multiple backhaul feeds, then rent pucks through your existing equipment‑rental partner.</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Connectivity your attendees can feel.</h2>
+              <p className="text-xl text-muted-foreground">Deploy a Waypoint mesh network at your festival or business convention, then offer devices for rent through your existing equipment‑rental partner or sell directly to attendees.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
                 <MapPin className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">Distribution model</h3>
-                <p className="text-muted-foreground">Waypoint → Rental Partner → Festival → Attendee.</p>
+                <p className="text-muted-foreground">Waypoint → Rental Partner → Event (Festival/Convention) → Attendee. Or direct purchase options.</p>
               </Card>
 
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
                 <Sparkles className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">Rapid deployment</h3>
-                <p className="text-muted-foreground">Modular rollout across campsites and stages.</p>
+                <p className="text-muted-foreground">Modular rollout across venues, stages, and convention halls.</p>
               </Card>
 
               <Card className="p-6 bg-card/80 backdrop-blur-sm border-border">
@@ -231,10 +234,10 @@ const Index = () => {
             <div className="max-w-3xl mx-auto mb-12">
               <h3 className="text-2xl font-bold mb-4">Deployment checklist</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>Site map & stage plan</li>
-                <li>Backhaul locations (e.g., satellite or fixed points)</li>
-                <li>Mesh node placement & power</li>
-                <li>Rental partner ops (kiosks, returns, SLAs)</li>
+                <li>Site map & venue plan (festivals, conventions, or both)</li>
+                <li>Mesh network coverage planning</li>
+                <li>Device distribution strategy (rental or direct purchase)</li>
+                <li>Rental partner ops (kiosks, returns, SLAs) if applicable</li>
                 <li>On‑show monitoring & support</li>
               </ul>
             </div>
@@ -254,11 +257,11 @@ const Index = () => {
       {/* Why Waypoint vs just cellular data */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Waypoint Data vs. “just cellular data”?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Waypoint vs. "just cellular data"?</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Built for crowd peaks</h3><p className="text-muted-foreground">Mesh routes around cellular congestion.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Local resilience</h3><p className="text-muted-foreground">Multiple backhaul options reduce single‑point failure.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Fan experience</h3><p className="text-muted-foreground">Fewer missed meetups, more captured moments.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Built for crowded events</h3><p className="text-muted-foreground">Mesh network routes around cellular congestion at festivals and conventions.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Works without data</h3><p className="text-muted-foreground">Make calls, send texts, and use maps even when cellular networks fail.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Better experience</h3><p className="text-muted-foreground">Fewer missed meetups, reliable communication, and seamless connectivity.</p></Card>
           </div>
         </div>
       </section>
@@ -268,9 +271,9 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Tech overview</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Waypoint mesh tech</h3><p className="text-muted-foreground">Long‑range, low‑power device‑to‑device coverage across festival geography.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Multi‑source backhaul</h3><p className="text-muted-foreground">Satellite or fixed links bring internet into the venue.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Personal Wi‑Fi</h3><p className="text-muted-foreground">Standard phones connect instantly — no special app required.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">MagSafe device</h3><p className="text-muted-foreground">Compact device that attaches to the back of your iPhone via MagSafe technology.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Bluetooth connectivity</h3><p className="text-muted-foreground">Connects your iPhone to the device via Bluetooth—no Wi‑Fi required.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Mesh network</h3><p className="text-muted-foreground">Device‑to‑device mesh network enables communication across festivals and conventions.</p></Card>
           </div>
         </div>
       </section>
@@ -278,12 +281,12 @@ const Index = () => {
       {/* Rental Flow */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Rental flow</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">How to get started</h2>
           <div className="grid md:grid-cols-4 gap-6 max-w-5xl">
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">1) Reserve</h3><p className="text-muted-foreground">Online or at entry.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">2) Collect & pair</h3><p className="text-muted-foreground">Staff pairs it in seconds.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">3) Stay connected</h3><p className="text-muted-foreground">Share with a friend.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">4) Return</h3><p className="text-muted-foreground">Drop at exit.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">1) Purchase or rent</h3><p className="text-muted-foreground">Buy directly or rent through event partnerships.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">2) Attach & pair</h3><p className="text-muted-foreground">Stick to your iPhone and pair via Bluetooth.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">3) Connect to mesh</h3><p className="text-muted-foreground">Join the mesh network automatically.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">4) Stay connected</h3><p className="text-muted-foreground">Make calls, send texts, use maps—no data needed.</p></Card>
           </div>
         </div>
       </section>
@@ -291,8 +294,8 @@ const Index = () => {
       {/* Trust & Proof */}
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
-          <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">In pilot with select festivals</Badge>
-          <p className="text-muted-foreground">Seeking additional partners for the 2025 season.</p>
+          <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">Available now</Badge>
+          <p className="text-muted-foreground">Seeking partnerships with festivals and business conventions for the 2025 season.</p>
         </div>
       </section>
 
@@ -301,11 +304,12 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">FAQ</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Does it work without cell coverage?</h3><p className="text-muted-foreground">Yes. Your phone connects to Waypoint Data over Wi‑Fi; the puck uses the festival’s waypoint mesh and on‑site backhaul.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">How many people per puck?</h3><p className="text-muted-foreground">Designed for one to two attendees.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">What speeds should I expect?</h3><p className="text-muted-foreground">Enough for video streaming, calling and photo sharing in typical conditions. Actual performance varies with load, terrain and placement.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Is there an app?</h3><p className="text-muted-foreground">No special app required — connect via Wi‑Fi and use your phone as normal.</p></Card>
-            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">How do festivals get it?</h3><p className="text-muted-foreground">We supply through established equipment‑rental partners who handle on‑site distribution.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Does it work without cellular data?</h3><p className="text-muted-foreground">Yes. Your iPhone connects to the Waypoint device via Bluetooth, which then connects to the mesh network. You can make calls, send texts, and use Find My Friends maps even when cellular networks fail.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Which iPhones are compatible?</h3><p className="text-muted-foreground">The device uses MagSafe technology, so it's compatible with iPhone 12 and later models that support MagSafe.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Can I buy it or only rent it?</h3><p className="text-muted-foreground">Both options are available. You can purchase your own device directly, or rent one through event partnerships at festivals and business conventions.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Is there an app required?</h3><p className="text-muted-foreground">No special app required. Pair via Bluetooth and use your iPhone's native features—calls, messages, Find My Friends, and maps work normally.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">Where can I use it?</h3><p className="text-muted-foreground">Perfect for music festivals and business conventions where cellular networks get congested. Works anywhere there's a Waypoint mesh network.</p></Card>
+            <Card className="p-6 bg-card border-border"><h3 className="font-bold mb-2">How do events partner with Waypoint?</h3><p className="text-muted-foreground">We work with festivals and business conventions to deploy mesh networks and offer devices through rental partners or direct sales to attendees.</p></Card>
           </div>
         </div>
       </section>
@@ -314,14 +318,21 @@ const Index = () => {
       <section id="contact" className="py-20 relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Book a pilot</h2>
-            <p className="text-xl text-muted-foreground mb-8">We’ll reply within one business day.</p>
-            <PartnerFormDialog>
-              <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
-                Book a pilot
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </PartnerFormDialog>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Get started with Waypoint</h2>
+            <p className="text-xl text-muted-foreground mb-8">Join the waitlist or book a pilot for your event.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <WaitlistFormDialog>
+                <Button size="lg" className="bg-gradient-hero hover:shadow-glow-strong transition-all text-lg">
+                  Join waitlist
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </WaitlistFormDialog>
+              <PartnerFormDialog>
+                <Button size="lg" variant="outline" className="text-lg">
+                  Book a pilot
+                </Button>
+              </PartnerFormDialog>
+            </div>
             <div className="mt-4">
               <a href="#organisers" className="inline-flex">
                 <Button size="lg" variant="outline" className="text-lg">Request a site plan</Button>
@@ -340,7 +351,7 @@ const Index = () => {
                 <div className="w-8 h-8 rounded-full bg-gradient-hero" />
                 <span className="text-xl font-bold">Waypoint</span>
               </div>
-              <p className="text-muted-foreground">Waypoint Data is rented to attendees via festival equipment rental partners. Designed for use at large outdoor events.</p>
+              <p className="text-muted-foreground">Waypoint is a MagSafe device that connects your iPhone via Bluetooth to a mesh network. Available for direct purchase or through event partnerships at music festivals and business conventions.</p>
             </div>
             
             <div>
@@ -353,7 +364,7 @@ const Index = () => {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">For Festivals</h4>
+              <h4 className="font-bold mb-4">For Events</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li><a href="#organisers" className="hover:text-foreground transition-colors">Partner With Us</a></li>
                 <li><a href="#contact" className="hover:text-foreground transition-colors">Contact</a></li>
