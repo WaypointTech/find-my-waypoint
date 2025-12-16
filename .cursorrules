@@ -1,0 +1,9 @@
+# Project-specific rules for find-my-waypoint
+
+## Package Manager
+- Use **`bun`** instead of `npm`, `yarn`, or `pnpm` for all package management tasks.
+- Use `bun install`, `bun add`, `bun remove`, etc. for dependency management.
+- Use `bun run` for running scripts defined in package.json.
+
+
+
