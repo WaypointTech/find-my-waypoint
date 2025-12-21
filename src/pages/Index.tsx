@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { MeshNetworkBackground } from "@/components/MeshNetworkBackground";
 
 // LinkedIn icon component (Linkedin from lucide-react is deprecated)
 const LinkedInIcon = ({ className }: { className?: string }) => (
@@ -32,6 +33,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-subtle" />
+        <MeshNetworkBackground />
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px]" />
         
         <div className="container mx-auto px-6 relative z-10 py-20">
