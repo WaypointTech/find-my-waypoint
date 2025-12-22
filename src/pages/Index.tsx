@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { MeshNetworkBackground } from "@/components/MeshNetworkBackground";
+import { PartnerFormDialog } from "@/components/PartnerFormDialog";
 
 // LinkedIn icon component (Linkedin from lucide-react is deprecated)
 const LinkedInIcon = ({ className }: { className?: string }) => (
@@ -96,16 +97,15 @@ const Index = () => {
                   Interested in learning more?
                 </p>
 
-                <Button
-                  size="default"
-                  className="bg-gradient-hero hover:shadow-glow-strong transition-all"
-                  asChild
-                >
-                  <a href="mailto:eddy@findwaypoint.com?subject=Waypoint%20Interest&body=Hi%20Eddy%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20Waypoint.%0A%0AOrganisation%20Name%3A%20%0AContact%20Name%3A%20%0APhone%20Number%3A%20%0AProject%2FUse%20Case%20Name%3A%20%0ANumber%20of%20Users%3A%20%0ATimeframe%3A%20%0A%0AMessage%3A%20">
+                <PartnerFormDialog>
+                  <Button
+                    size="default"
+                    className="bg-gradient-hero hover:shadow-glow-strong transition-all"
+                  >
                     Request details
                     <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
-                </Button>
+                  </Button>
+                </PartnerFormDialog>
               </div>
             </div>
           </div>
