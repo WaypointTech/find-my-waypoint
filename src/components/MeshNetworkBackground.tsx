@@ -26,13 +26,14 @@ export const MeshNetworkBackground = () => {
       const height = container.clientHeight || window.innerHeight;
       canvas.width = width;
       canvas.height = height;
+      return { width, height };
     };
 
-    // Initial resize with a small delay to ensure DOM is ready
-    setTimeout(resizeCanvas, 0);
+    // Initial resize to get dimensions
+    const { width, height } = resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Create nodes
+    // Create nodes using the actual canvas dimensions
     const nodeCount = 40;
     const nodes: Node[] = [];
     const maxDistance = 150;
@@ -40,8 +41,8 @@ export const MeshNetworkBackground = () => {
     for (let i = 0; i < nodeCount; i++) {
       const hue = 263 + Math.random() * 17; // Between 263 and 280
       nodes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * width,
+        y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
         color: `hsl(${hue}, 70%, 60%)`,
