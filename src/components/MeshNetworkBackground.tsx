@@ -10,20 +10,26 @@ interface Node {
 
 export const MeshNetworkBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const width = container.clientWidth || window.innerWidth;
+      const height = container.clientHeight || window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
     };
-    resizeCanvas();
+
+    // Initial resize with a small delay to ensure DOM is ready
+    setTimeout(resizeCanvas, 0);
     window.addEventListener('resize', resizeCanvas);
 
     // Create nodes
@@ -102,10 +108,12 @@ export const MeshNetworkBackground = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 z-0 pointer-events-none"
-      style={{ background: 'transparent' }}
-    />
+    <div ref={containerRef} className="absolute inset-0 z-0 pointer-events-none">
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full"
+        style={{ background: 'transparent' }}
+      />
+    </div>
   );
 };

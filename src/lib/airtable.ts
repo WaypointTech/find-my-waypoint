@@ -14,7 +14,7 @@ interface AirtableRecord {
 
 interface AirtableResponse {
   id: string;
-  fields: Record<string, any>;
+  fields: Record<string, unknown>;
   createdTime: string;
 }
 
@@ -114,7 +114,7 @@ export class AirtableService {
         "Source": data.source || "Website",
         "Status": "New",
       },
-    } as { fields: Record<string, any> };
+    } as { fields: Record<string, string> };
 
     const tableSegment = this.downloadsTableId ? this.downloadsTableId : encodeURIComponent(this.downloadsTableName);
     const response = await fetch(
@@ -130,10 +130,10 @@ export class AirtableService {
     );
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
+      const errorData = await response.json().catch(() => ({})) as { error?: { message?: string } };
       throw new Error(
         `Failed to create download lead: ${response.status} ${response.statusText}. ${
-          (errorData as any).error?.message || "Unknown error"
+          errorData.error?.message || "Unknown error"
         }`
       );
     }
