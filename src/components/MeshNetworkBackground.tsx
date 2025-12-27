@@ -39,13 +39,13 @@ export const MeshNetworkBackground = () => {
     const maxDistance = 150;
 
     for (let i = 0; i < nodeCount; i++) {
-      const hue = 263 + Math.random() * 17; // Between 263 and 280
+      const hue = 297 + Math.random() * 44; // Between 297 (purple) and 341 (pink)
       nodes.push({
         x: Math.random() * width,
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
-        color: `hsl(${hue}, 70%, 60%)`,
+        color: `hsl(${hue}, 60%, 50%)`,
       });
     }
 
@@ -80,7 +80,7 @@ export const MeshNetworkBackground = () => {
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `hsla(270, 70%, 65%, ${opacity})`;
+            ctx.strokeStyle = `hsla(341, 60%, 49%, ${opacity})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
