@@ -40,7 +40,7 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10 py-20">
           {/* Logo */}
           <div className="flex items-center gap-2 mb-12 md:mb-16">
-            <div className="w-10 h-10 rounded-full bg-gradient-hero" />
+            <img src="/waypoint-icon-transparent.png" alt="Waypoint" className="w-10 h-10" />
             <span className="text-3xl font-bold">Waypoint</span>
           </div>
 
